@@ -1,25 +1,35 @@
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 
 public class ProgramaBiblioteca {
     public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
         List<Livro> livros = createLivros();
         List<Usuario> usuarios = createUsuarios();
 
         List<Livro> livrosEmprestimo = new ArrayList<>();
         List<Emprestimo> emprestimoList = new ArrayList<>();
 
-        //Emprestimo 1
-        livrosEmprestimo.add(livros.get(3));
-        livrosEmprestimo.add(livros.get(5));
-        emprestimoList.add(new Emprestimo(usuarios.get(3),livrosEmprestimo,"14/09/2020"));
-
-        //Emprestimo 2
-        //Emprestimo 1
-        livrosEmprestimo.add(livros.get(8));
-        livrosEmprestimo.add(livros.get(10));
-        livrosEmprestimo.add(livros.get(0));
-        emprestimoList.add(new Emprestimo(usuarios.get(4),livrosEmprestimo,"14/09/2020"));
+        while(true){
+            System.out.println("Bem vindo O que você deseja fazer!");
+            System.out.println("1 - Cadastrar um usuário");
+            System.out.println("2 - Emprestar Livros");
+            System.out.println("3 - Devolver Livros");
+            System.out.println("4 - Sair");
+            int opcao = scanner.nextInt();
+            switch (opcao){
+                case 1:
+                    System.out.println("Informe seu nome");
+                    String nome = scanner.next();
+                    System.out.println("Informe seu Endereço");
+                    String endereco = scanner.next();
+                    System.out.println("Informe seu rg");
+                    String rg = scanner.next();
+                    usuarios.add(new Usuario(nome,endereco,rg));
+                    System.out.println("Operação realizada com sucesso!");
+            }
+        }
 
     }
 
