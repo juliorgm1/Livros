@@ -1,12 +1,22 @@
 public class Usuario {
     private String nome;
     private String rg;
-    private String enderco;
+    public String enderco;
+
+    public Usuario(){}
 
     public Usuario(String nome, String rg, String enderco) {
         this.nome = nome;
         this.rg = rg;
-        this.enderco = enderco;
+       //
+    }
+
+    public String imprimeUsuario(String mensagem, double idade){
+        return mensagem;
+    }
+
+    public String imprimeUsuario(String mensagem, int idade){
+        return mensagem;
     }
 
     @Override

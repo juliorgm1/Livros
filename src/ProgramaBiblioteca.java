@@ -11,6 +11,11 @@ public class ProgramaBiblioteca {
         List<Livro> livrosEmprestimo = new ArrayList<>();
         List<Emprestimo> emprestimoList = new ArrayList<>();
 
+        String[] nomes = {"asdf", "awsfasfdasd"};
+
+        System.out.println(nomes.length);
+        System.out.println(livrosEmprestimo.size());
+
         while(true){
             System.out.println("Bem vindo O que você deseja fazer!");
             System.out.println("1 - Cadastrar um usuário");
@@ -28,6 +33,12 @@ public class ProgramaBiblioteca {
                     String rg = scanner.next();
                     usuarios.add(new Usuario(nome,endereco,rg));
                     System.out.println("Operação realizada com sucesso!");
+                case 2:
+                    System.out.println("Informe o codigo do usuário");
+                    int codigo = scanner.nextInt();
+                    if (codigo >= usuarios.size() || codigo < 0) {
+                        System.out.println("Usuario Inexistente");
+                    }else{}
             }
         }
 
@@ -72,6 +83,7 @@ public class ProgramaBiblioteca {
 
     public static List<Usuario> createUsuarios(){
         List<Usuario> usuarios = new ArrayList<>();
+
         usuarios.add(new Usuario("Jeff","123","Rua X"));
         usuarios.add(new Usuario("Anna","324","Rua A"));
         usuarios.add(new Usuario("Lua","433","Rua B"));
